@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.zeasn.bookofanswer",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 10001,
+      "versionName": "1.0.1",
+      "outputFile": "BookOfAnswer_release_v1.0.1.apk"
+    }
+  ]
+}
