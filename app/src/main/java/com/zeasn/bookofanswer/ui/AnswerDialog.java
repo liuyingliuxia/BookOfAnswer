@@ -1,29 +1,29 @@
-package com.zeasn.bookofanswer;
+package com.zeasn.bookofanswer.ui;
+
+import static com.zeasn.bookofanswer.Constant.EVENT_TYPE_DIALOG_DISMISS;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.zeasn.bookofanswer.databinding.ActivityMainBinding;
+import com.zeasn.bookofanswer.R;
+import com.zeasn.bookofanswer.bean.Answer;
 import com.zeasn.bookofanswer.databinding.DialogAnswerBinding;
 
 import java.util.Random;
 
+/**
+ * @author Administrator
+ */
 public class AnswerDialog extends Dialog {
 
     View view;
@@ -31,7 +31,6 @@ public class AnswerDialog extends Dialog {
     LayoutInflater inflater;
     Random random;
     private DialogAnswerBinding dialogAnswerBinding;
-    static final String EVENT_TYPE_DIALOG_DISMISS = "EVENT_TYPE_DIALOG_DISMISS";
     public AnswerDialog(@NonNull Context context) {
         super(context, R.style.custom_dialog);
         this.mContext = context;
@@ -46,10 +45,10 @@ public class AnswerDialog extends Dialog {
         setContentView(view);
         setFullScreen();
         random = new Random();
-        dialogAnswerBinding.tvAnswer.setText(Answer.dazs[random.nextInt(Answer.dazs.length)]);
+        dialogAnswerBinding.tvAnswer.setText(Answer.ANSWER[random.nextInt(Answer.ANSWER.length)]);
         dialogAnswerBinding.btnOk.setOnClickListener(v->{
             dismiss();
-            dialogAnswerBinding.tvAnswer.setText(Answer.dazs[random.nextInt(Answer.dazs.length)]);
+            dialogAnswerBinding.tvAnswer.setText(Answer.ANSWER[random.nextInt(Answer.ANSWER.length)]);
             LiveEventBus.get(EVENT_TYPE_DIALOG_DISMISS).post(EVENT_TYPE_DIALOG_DISMISS);
         });
     }
@@ -60,12 +59,13 @@ public class AnswerDialog extends Dialog {
     protected void setFullScreen() {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         getWindow().setGravity(Gravity.CENTER);
         Display display = getWindow().getWindowManager().getDefaultDisplay();
         WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.height = (display.getHeight()); //设置宽度
-        lp.width = (display.getWidth()); //设置宽度
+        //设置宽度
+        lp.height = (display.getHeight());
+        //设置宽度
+        lp.width = (display.getWidth());
         getWindow().setAttributes(lp);
     }
 

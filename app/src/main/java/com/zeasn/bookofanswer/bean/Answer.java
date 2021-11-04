@@ -1,12 +1,13 @@
-package com.zeasn.bookofanswer;
+package com.zeasn.bookofanswer.bean;
 
 /**
  * Author:Miracle.lin
  * Date:2021/7/22 15:13
  * Descri:
+ * @author Administrator
  */
 public class Answer {
-    static final String[] dazs = {
+    public static final String[] ANSWER = {
             "找个人给你意见", "算了吧", "请教你的妈妈", "当然咯", "谁说得准呢，先观望着", "千万别傻",
             "保持你的好奇心，去挖掘真相", "把心揣怀里", "答案在镜子里", "不", "这事儿不靠谱", "天上要掉馅饼了",
             "有好运", "要有耐心", "你需要知道真相", "还有另一种情况", "观望", "别让它影响到你", "是", "信任", "列个清单",
@@ -38,6 +39,10 @@ public class Answer {
             "你会后悔的", "毫无疑问", "当然", "相信自己的直觉", "这是一个机会", "形势不明", "先让自己休息", "重新考虑",
             "不明智", "抓住机会", "等待机会", "不要做得太过分", "保持现状", "不要忧虑", "有意料之外的事会发生，不妨等待",
             "你会失望的", "花更多的时间来决定", "你开心就好"
+    };
+
+    static final String[] EAT_WHAT = {
+
     };
 }
 

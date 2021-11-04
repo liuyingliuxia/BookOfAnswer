@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.zeasn.bookofanswer"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 10001
         versionName "1.0.1"
 
@@ -64,6 +64,9 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.7.0' //最新版本
 
     //livebus
-    implementation 'com.jeremyliao:live-event-bus-x:1.7.3'
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'io.github.youth5201314:banner:2.2.2'
 
 }

@@ -5,10 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tb_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="#0371DD"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#0371DD"
+        app:tabTextColor="#111111"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_vp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="切换"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieBg"
+        android:id="@+id/lottie_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:lottie_fileName="stars_bg.json"
@@ -18,32 +49,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <Button
-        android:id="@+id/btnClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_btn_bg"
-        android:text="冥想三秒你的问题后查看答案"
-        android:padding="@dimen/dp_20"
-        android:textSize="@dimen/sp_35"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieLoading"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="@dimen/dp_200"
-        app:lottie_fileName="stars_loading.json"
-        app:lottie_loop="true"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
